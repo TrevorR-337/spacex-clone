@@ -8,42 +8,147 @@
     <title>SpaceX</title>
     <link rel="icon" type="image/jpeg" href="img/favicon.jpeg">
     <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet"  href="styles.css">
+    <link rel="stylesheet"  href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600;800&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <nav>
-        <img src="img/header-logo.png" alt="SpaceX" class="header-logo">
+    <nav id="nav">
+        <img onclick="goHome()" src="img/header-logo.png" alt="SpaceX" class="header-logo">
         <div id="header-links" class="header-links">
-            <a href="falcon9.html" class="header-link">FALCON 9<div class="underline"></div></a>
-            <a href="falcon-heavy.html" class="header-link">FALCON HEAVY</a>
-            <a href="dragon.html" class="header-link">DRAGON</a>
-            <a href="starship.html" class="header-link">STARSHIP</a>
-            <a href="human-spaceflight.html" class="header-link">HUMAN SPACEFLIGHT</a>
-            <a href="rideshare.html" class="header-link">RIDESHARE</a>
-            <a href="starshield.html" class="header-link">STARSHIELD</a>
-            <a href="starlink.html" class="header-link">STARLINK</a>
+            <a href="falcon9.html" 
+                onmouseover="extendUnderline(this)"
+                onmouseleave="retractUnderline(this)"
+                class="header-link"
+                >
+                FALCON 9
+                <div class="underline"></div>
+            </a>
+
+            <a href="falcon-heavy.html" 
+                onmouseover="extendUnderline(this)"
+                onmouseleave="retractUnderline(this)"
+                class="header-link">
+                FALCON HEAVY
+                <div class="underline"></div>
+            </a>
+
+            <a href="dragon.html"
+                onmouseover="extendUnderline(this)"
+                onmouseleave="retractUnderline(this)"
+                class="header-link">
+                DRAGON
+                <div class="underline"></div>
+            </a>
+
+            <a href="starship.html"
+                onmouseover="extendUnderline(this)"
+                onmouseleave="retractUnderline(this)"
+                class="header-link">STARSHIP
+                <div class="underline"></div>
+            </a>
+
+            <a href="human-spaceflight.html" 
+                onmouseover="extendUnderline(this)"
+                onmouseleave="retractUnderline(this)"
+                class="header-link">
+                HUMAN SPACEFLIGHT<div class="underline"></div>
+            </a>
+
+            <a href="rideshare.html"
+                onmouseover="extendUnderline(this)"
+                onmouseleave="retractUnderline(this)"
+                class="header-link">
+                RIDESHARE<div class="underline"></div>
+            </a>
+
+            <a href="starshield.html"
+                onmouseover="extendUnderline(this)"
+                onmouseleave="retractUnderline(this)"
+                class="header-link">
+                STARSHIELD
+                <div class="underline"></div>
+            </a>
+
+            <a href="starlink.html"
+                onmouseover="extendUnderline(this)"
+                onmouseleave="retractUnderline(this)"
+                class="header-link">
+                STARLINK
+                <div class="underline"></div>
+            </a>
+
         </div>
         <div id="header-menu" class="header-menu">
-            <a href="shop.html" class="header-link">SHOP</a>
-            <p id="accordion-menu">☰</p>
+            <a id="shop-link"
+                onmouseover="extendUnderline(this)"
+                onmouseleave="retractUnderline(this)"
+                href="shop.html" 
+                class="header-link">
+                SHOP
+                <div class="underline"></div>
+            </a>
+            <!-- <p onclick="toggleMenu()" id="accordion-menu" class="accordion-menu-btn">☰</p> -->
         </div>
     </nav>
+    <div onclick="toggleMenu()" class="menu-toggle-btn-div">
+        <div id="accordion-line-top" class="accordion-line-top"></div>
+        <div id="accordion-line-mid" class="accordion-line-mid"></div>
+        <div id="accordion-line-bottom" class="accordion-line-bottom"></div>
+    </div>
+
+    <div id="menu-div" class="menu-div">
+        <!-- <p class="collapse-menu-btn" onclick="toggleMenu()">🞫</p> -->
+        <button class="menu-btn">MISSION</button>
+        <button class="menu-btn">LAUNCHES</button>
+        <button class="menu-btn">CAREERS</button>
+        <button class="menu-btn">UPDATES</button>
+        <button class="menu-btn">SHOP</button>
+    </div>
+
     <div id="home-bg-1" class="home-bg">
+        <div id="home-bg-txt-div-1" class="home-bg-txt-div">
+            <p class="home-bg-txt-small">COMPLETED MISSION</p>
+            <p class="home-bg-txt-large">DRAGON AND CREW-6 RETURN TO EARTH</p>
+            <button class="learn-more-btn">LEARN MORE</button>
+        </div>
+        <p id="homg-bg-down-arrow" class="home-bg-down-arrow">⮟</p>
     </div>
+
     <div id="home-bg-2" class="home-bg">
-
+        <div id="home-bg-txt-div-2" class="home-bg-txt-div">
+            <p class="home-bg-txt-small">RECENT LAUNCH</p>
+            <p class="home-bg-txt-large">STARLINK MISSION</p>
+            <button class="learn-more-btn">LEARN MORE</button>
+        </div>
     </div>
+
     <div id="home-bg-3" class="home-bg">
-
+        <div id="home-bg-txt-div-3" class="home-bg-txt-div">
+            <p class="home-bg-txt-small">RECENT LAUNCH</p>
+            <p class="home-bg-txt-large">SPACE DEVELOPMENT AGENCY'S SECOND TRANCHE 0 MISSION</p>
+            <button class="learn-more-btn">LEARN MORE</button>
+        </div>
     </div>
+
     <div id="home-bg-4" class="home-bg">
-
+        <div id="home-bg-txt-div-4" class="home-bg-txt-div">
+            <p class="home-bg-txt-small">RECENT LAUNCH</p>
+            <p class="home-bg-txt-large">CREW-7 MISSION</p>
+            <button class="learn-more-btn">LEARN MORE</button>
+        </div>
     </div>
+
     <div id="home-bg-5" class="home-bg">
-
+        <div id="home-bg-txt-div-5" class="home-bg-txt-div">
+            <p class="home-bg-txt-large">STARSHIP FLIGHT TEST</p>
+            <button class="learn-more-btn">LEARN MORE</button>
+        </div>
     </div>
+
+    <div id="screen-overlay" class="screen-overlay"></div>
+
+    <script src="index.js"></script>
 </body>
 </html>
