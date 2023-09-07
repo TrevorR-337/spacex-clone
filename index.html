@@ -89,17 +89,23 @@
                 SHOP
                 <div class="underline"></div>
             </a>
-            <!-- <p onclick="toggleMenu()" id="accordion-menu" class="accordion-menu-btn">☰</p> -->
         </div>
     </nav>
-    <div onclick="toggleMenu()" class="menu-toggle-btn-div">
+    <div onclick="toggleMenu(100)" class="menu-toggle-btn-div">
         <div id="accordion-line-top" class="accordion-line-top"></div>
         <div id="accordion-line-mid" class="accordion-line-mid"></div>
         <div id="accordion-line-bottom" class="accordion-line-bottom"></div>
     </div>
 
     <div id="menu-div" class="menu-div">
-        <!-- <p class="collapse-menu-btn" onclick="toggleMenu()">🞫</p> -->
+        <button data-dependent="true" class="menu-btn menu-btn-hidden">FALCON 9</button>
+        <button data-dependent=true class="menu-btn menu-btn-hidden">FALCON HEAVY</button>
+        <button data-dependent=true class="menu-btn menu-btn-hidden">DRAGON</button>
+        <button data-dependent=true class="menu-btn menu-btn-hidden">STARSHIP</button>
+        <button data-dependent=true class="menu-btn menu-btn-hidden">HUMAN SPACEFLIGHT</button>
+        <button data-dependent=true class="menu-btn menu-btn-hidden">RIDESHARE</button>
+        <button data-dependent=true class="menu-btn menu-btn-hidden">STARSHIELD</button>
+        <button data-dependent=true class="menu-btn menu-btn-hidden">STARLINK</button>
         <button class="menu-btn">MISSION</button>
         <button class="menu-btn">LAUNCHES</button>
         <button class="menu-btn">CAREERS</button>
@@ -113,8 +119,8 @@
             <p class="home-bg-txt-large">DRAGON AND CREW-6 RETURN TO EARTH</p>
             <button class="learn-more-btn">LEARN MORE</button>
         </div>
-        <p id="homg-bg-down-arrow" class="home-bg-down-arrow">⮟</p>
     </div>
+    <p id="homg-bg-down-arrow" class="home-bg-down-arrow">⮟</p>
 
     <div id="home-bg-2" class="home-bg">
         <div id="home-bg-txt-div-2" class="home-bg-txt-div">
@@ -150,5 +156,6 @@
     <div id="screen-overlay" class="screen-overlay"></div>
 
     <script src="index.js"></script>
+    <script src="nav.js"></script>
 </body>
 </html>

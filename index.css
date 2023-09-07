@@ -8,10 +8,11 @@ body {
     background-color: rgba(10, 10, 30, 1);
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .screen-overlay {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     position: fixed;
     background: black;
@@ -25,9 +26,6 @@ body {
     opacity: 0.55;
     z-index: 2;
 }
-
-
-
 
 
 
@@ -138,8 +136,8 @@ nav {
     width: 0px;
     height: 100vh;
     position: fixed;
-    padding-top: 105px;
-    right: -100px;
+    padding-top: 90px;
+    right: -350px;
     align-self: flex-end;
     background-color: black;
     opacity: 0;
@@ -159,45 +157,38 @@ nav {
 }
 
 .menu-btn {
-    width: 270px;
+    width: 275px;
     height: 40px;
     font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    text-align: right;
     color: white;
+    display: block;
+    position: relative;
     background: none;
     outline: none;
     border: none;
-    border-bottom: solid 1px rgb(40,40,40);
+    left: 70px;
+    opacity: 0;
+    border-bottom: solid 1px rgb(34,34,34);
+    transition: color 300ms, top 400ms, left 400ms, opacity 1000ms;
+    top: 200px;
 }
 
-
-
-/* .accordion-menu-btn {
-    color: white;
-    font-family: 'Noto Sans Symbols 2', sans-serif;
-    font-size: 18px;
-}
-
-.accordion-menu-btn:hover {
+.menu-btn:hover {
     cursor: pointer;
+    color: grey;
 }
 
-
-.collapse-menu-btn {
-    margin-top: 30px;
-    font-family: 'Noto Sans Symbols 2';
-    font-size: 20px;
-    align-self: flex-end;
-    margin-top: 43px;
-    margin-right: 60px;
-    color: white;
+.menu-btn-hidden {
+    display: none;
 }
 
-.collapse-menu-btn:hover {
-    cursor: pointer;
+.menu-btn-fade-in {
+    top: 0px;
+    left: 0px;
+    opacity: 1;
 }
- */
-
-
 
 
 /* MENU TOGGLE BTN --- MENU TOGGLE BTN --- MENU TOGGLE BTN --- MENU TOGGLE BTN --- MENU TOGGLE BTN ---  */
@@ -205,8 +196,8 @@ nav {
     width: 17px;
     height: 12px;
     margin-top: 43px;
-    margin-right: 40px;
-    position: absolute;
+    margin-right: 60px;
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -218,6 +209,7 @@ nav {
 .menu-toggle-btn-div:hover {
     cursor: pointer;
 }
+
 
 
 .accordion-line-top {
@@ -272,11 +264,12 @@ nav {
 
 
 .home-bg {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-size: cover;
     display: flex;
     align-items: center;
+    justify-content: center;
     background-position: center;
     border-top: solid black 5px;
 }
@@ -285,7 +278,7 @@ nav {
     width: 500px;
     height: 250px;
     position: relative;
-    left: 15%;
+    right: 21%;
     top: 200px;
     opacity: 0;
     transition: opacity 800ms 200ms;
@@ -306,6 +299,10 @@ nav {
     font-weight: 600;
     font-style: bold;
     margin-bottom: 20px;
+}
+
+.home-bg-txt-fade-in {
+    opacity: 1;
 }
 
 .learn-more-btn {
@@ -330,12 +327,12 @@ nav {
 
 .home-bg-down-arrow {
     font-family: 'Noto Sans Symbols 2', sans-serif;
-    font-size: 28px;
+    font-size: 36px;
     color: white;
     position: absolute;
-    width: 100%;
+    transform: translate(0px, -50px);
+    align-self: center;
     text-align: center;
-    top: 850px;
     opacity: 1;
     animation: down_arrow_anim 1.5s linear 0s infinite;
     transition: opacity 600ms;
@@ -359,9 +356,6 @@ nav {
 
 
 
-.home-bg-txt-fade-in {
-    opacity: 1;
-}
 
 
 
@@ -400,7 +394,12 @@ nav {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 1416px) {
+@media screen and (max-width: 1350px) {
+
+    .home-bg-txt-div {
+        right: 21%;
+    }
+
     .header-links {
         display: none;
     }
@@ -413,12 +412,23 @@ nav {
     #shop-link {
         display: none;
     }
+
+    .menu-btn-hidden {
+        display: block;
+    }
 }
 
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 1200px) {
+    .home-bg-txt-div {
+        right: 10%;
+    }
+}
+
+@media screen and (max-width: 750px) {
 
     .home-bg-txt-div {
         width: 350px;
+        right: 0;
         top: 250px;
     }
 
