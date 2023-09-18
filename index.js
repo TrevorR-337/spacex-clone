@@ -13,7 +13,7 @@ let homeBG_five = document.getElementById('home-bg-5');
 let arrowFadeObserverOptions = {
     root: null,
     rootMargin: "0px",
-    threshold: 1
+    threshold: 0.8
 }
 
 let fadeDownArrow = (entries, observer) => {

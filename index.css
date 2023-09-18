@@ -265,12 +265,12 @@ nav {
 
 .home-bg {
     width: 100vw;
-    height: 100vh;
-    background-size: cover;
+    height: 950px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-position: center;
+    background-size: cover;
     border-top: solid black 5px;
 }
 
@@ -326,15 +326,19 @@ nav {
 
 
 .home-bg-down-arrow {
+    height: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-family: 'Noto Sans Symbols 2', sans-serif;
     font-size: 36px;
     color: white;
     position: absolute;
-    transform: translate(0px, -50px);
+    top: calc(100% - 100px);
     align-self: center;
     text-align: center;
     opacity: 1;
-    animation: down_arrow_anim 1.5s linear 0s infinite;
+    animation: down_arrow_anim 1.7s linear 0s infinite;
     transition: opacity 600ms;
 }
 
@@ -343,10 +347,10 @@ nav {
 }
 
 @keyframes down_arrow_anim {
-    0% {color: rgba(255,255,255, 1); top: 850px};
-    70% {color: rgba(255,255,255, 0); top: 870px;};
-    97% {color: rgba(255,255,255, 0); top: 870px;};
-    100% {color: rgba(255,255,255, 0.08); top: 850px;};
+    0% {color: rgba(255,255,255, 1); height: 0px;}
+    80% {color: rgba(255,255,255, 0); height: 70px;}
+    90% {color: rgba(255,255,255, 0); height: 0px;}
+    100% {color: rgba(255,255,255, .8); height: 0px;}
 }
 
     
@@ -426,6 +430,10 @@ nav {
 
 @media screen and (max-width: 750px) {
 
+    .menu-toggle-btn-div {
+        margin-right: 30px;
+    }
+
     .home-bg-txt-div {
         width: 350px;
         right: 0;
@@ -439,5 +447,11 @@ nav {
 
     .home-bg-txt-large {
         font-size: 30px;
+    }
+
+    .home-bg-down-arrow {
+        top: calc(100% - 80px);
+        font-size: 30px;
+        right: 100px;
     }
 }

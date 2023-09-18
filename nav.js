@@ -39,7 +39,6 @@ let fadeNav = (out) => {
 }
 
 addEventListener('scroll', (event) => {
-    console.log(window.scrollY);
     if(window.scrollY > 0) {
         if(!navIsFaded) {
             fadeNav(true);
@@ -59,7 +58,10 @@ let fadeMenuBtn = (ms) => {
     menu_btns_index ++;
     let menuBtnsTimout = setTimeout(() => {
         let sizeMinusOne = menu_btns.length;
-        if(menu_btns_index < sizeMinusOne) {  fadeMenuBtn(ms) } else { clearTimeout(menuBtnsTimout); }
+        if(menu_btns_index < sizeMinusOne && menuIsExtended) {  fadeMenuBtn(ms) } else { 
+            menu_btns_index=0;
+            clearTimeout(menuBtnsTimout); 
+        }
     },ms);
 }
 
@@ -98,10 +100,10 @@ let toggleMenu = (ms) => {
         accordionAnim(true);
         menuBtnsAnim(ms);
     } else {
+        menu_btns_index = 0;
         menuDiv.classList.remove('menu-div-extend');
         screenOverlay.classList.remove('screen-overlay-active');
         accordionAnim(false);
-        menu_btns_index = 0;
         menu_btns.forEach(elem => elem.classList.remove('menu-btn-fade-in'));
     }
     menuIsExtended = !menuIsExtended;
